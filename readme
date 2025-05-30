@@ -1,0 +1,6 @@
+personal nixos dotfiles featuring flakes, home-manager, hyprland & nvidia
+
+---
+
+Hosts:
+	- infinite: Hyprland
