@@ -1,0 +1,27 @@
+{
+  inputs,
+  pkgs,
+  system,
+  ...
+}:
+{
+  imports = [
+    ./fastfetch.nix
+    ./git.nix
+    ./neovim.nix
+  ];
+
+  home.packages = with pkgs; [
+    btop
+    eza
+    fastfetch
+    feh
+    ffmpegthumbnailer
+    imagemagick
+    lm_sensors
+    macchina
+    ncdu
+    pamixer
+    yazi
+  ];
+}
