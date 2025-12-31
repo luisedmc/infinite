@@ -46,31 +46,37 @@
   home.packages = with pkgs; [
     cava
     gcc
-    go
     killall
     material-symbols
     playerctl
     unzip
     zip
 
+    # development
+    go
+    php83
+    php83Packages.composer
+
     # gui
+    dbeaver-bin
     discord
     gapless
-    lite-xl
     mpv
     notesnook
     obs-studio
     pwvucontrol
     qbittorrent
-    stremio
+    spotify
 
     xfce.tumbler
     xfce.thunar
     xfce.xfconf
+    xdg-utils
 
     # editors
     mars-mips
-    zed-editor
+    lite-xl
+    vscode
 
     # wayland
     grim
@@ -79,8 +85,8 @@
     hyprshade
     hyprshot
     slurp
-    swww
     waybar
     wl-clipboard
+    wofi
   ];
 }

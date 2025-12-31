@@ -28,7 +28,6 @@ in
         "hyprpaper"
         "dunst"
         "spotify"
-        "swww-daemon"
         "hyprshade on vibrance"
         "hyprctl setcursor rose-pine-hyprcursor 24"
       ];
@@ -137,13 +136,13 @@ in
         sensitivity = -0.6;
       };
 
-      gestures = {
-        workspace_swipe = true;
-      };
-
       cursor = {
         no_hardware_cursors = true;
         enable_hyprcursor = true;
+      };
+
+      ecosystem = {
+        no_update_news = true;
       };
     };
   };

@@ -126,7 +126,7 @@
       # nerd-fonts.iosevka
 
       noto-fonts
-      noto-fonts-emoji
+      noto-fonts-color-emoji
     ]
     ++ (with nerd-fonts; [
       iosevka
