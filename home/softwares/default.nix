@@ -1,8 +1,10 @@
-{ ... }: {
-	imports = [
-		./anyrun
-		./cava
-		./hyprland
-		./waybar
-	];
+{ ... }:
+{
+  imports = [
+    ./anyrun
+    ./cava
+    ./git
+    ./hyprland
+    ./waybar
+  ];
 }
