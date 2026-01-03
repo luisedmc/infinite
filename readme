@@ -41,7 +41,7 @@ Since i use this disk for windows too i already have two partitions in it so the
 mkfs.ext4 -L nixos /dev/sda5
 
 -> Format swap partition with swap format
-mkfs.swap -L swap /dev/sda4
+mkswap -L swap /dev/sda4
 
 -> Format efi partition with fat32 format
 mkfs.fat -F 32 -n boot /dev/sda3
