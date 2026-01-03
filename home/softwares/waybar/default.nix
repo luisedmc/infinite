@@ -28,9 +28,9 @@
         ];
 
         modules-right = [
+          "tray"
           "hyprland/language"
           "network"
-          "tray"
           "pulseaudio"
           "clock"
           # "pulseaudio#microphone"
