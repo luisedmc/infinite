@@ -68,9 +68,15 @@ This will generate:
 
 You probably want to change stuff in configuration.nix, like create your user & enabling flakes. Since i have all my configuration in this repository i just enable flakes in configuration.nix & copy the hardware-configuration.nix & i'm good to go
 
+To enable flakes just add this line in configuration.nix
+
+nix.settings.experimental-features = [ "nix-command" "flakes" ];
+
 #### Install NixOS
 
 nixos-install
+
+nixos-enter --root /mnt -c 'passwd marin'
 
 reboot your system after
 
