@@ -2,5 +2,88 @@ personal nixos dotfiles featuring flakes, home-manager, hyprland & nvidia
 
 ---
 
-Hosts:
-	- infinite: Hyprland
+### Installing NixOS
+
+```
+-> Log in as sudo
+sudo -i
+
+-> Change font for better readability
+setfont ter-v32n
+
+-> Open partition editor to create the necessary partitions (i'm installing in sda so)
+cfdisk /dev/sda
+```
+
+#### Create three partitions
+
+Basically you will need three partitions: EFI, Swap and System
+
+EFI
+Size: 512MB
+Type: EFI System
+
+Swap
+Size: 8GB
+Type: Linux swap
+
+System
+Size: Remaining space
+Type: Linux filesystem
+
+#### Format partitions
+
+Since i use this disk for windows too i already have two partitions in it so the partitions created for NixOS are (in my case):
+
+- sda3 → EFI
+- sda4 → Swap
+- sda5 → System
+
+```
+-> Format filesystem partition with ext4 format
+mkfs.ext4 -L nixos /dev/sda5
+
+-> Format swap partition with swap format
+mkfs.swap -L swap /dev/sda4
+
+-> Format efi partition with fat32 format
+mkfs.fat -F 32 -n boot /dev/sda3
+```
+
+#### Mount partitions
+
+```
+-> Mount filesystem partition
+mount /dev/sda5 /mnt
+
+-> Mount efi partition
+mount --mkdir /dev/sda3 /mnt/boot
+
+-> Activate swap partition
+swapon /dev/sda4
+```
+
+#### Generate basic NixOS configuration
+
+```
+nixos-generate-config --root /mnt
+```
+
+This will generate:
+
+- /mnt/etc/nixos/configuration.nix
+- /mnt/etc/nixos/hardware-configuration.nix
+
+You probably want to change stuff in configuration.nix, like create your user. Since i have all my configuration in this repository i just copy the hardware-configuration.nix and i'm good to go
+
+#### Install NixOS
+
+```
+nixos-install
+```
+
+and reboot your system after
+
+### Configuration
+
+Hosts: - infinite: Hyprland
