@@ -1,5 +1,6 @@
 {
-	imports = [
-		./zsh
-	];
+  imports = [
+    ./starship.nix
+    ./zsh.nix
+  ];
 }
