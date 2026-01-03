@@ -1,37 +1,25 @@
-{
-  inputs,
-  pkgs,
-  system,
-  ...
-}:
-{
-  home.packages = with pkgs; [
-    (pkgs.php82.withExtensions (
-      { enabled, all }:
-      [
-        # core
-        enabled.curl
-        enabled.fileinfo
-        enabled.mbstring
-        enabled.openssl
-        enabled.sodium
-        enabled.zip
+{ config, pkgs, ... }:
 
-        # MySQL / MariaDB
-        enabled.mysqli
-        enabled.pdo
-        enabled.pdo_mysql
-
-        # PostgreSQL
-        enabled.pgsql
-        enabled.pdo_pgsql
-
-        # SQLite
-        enabled.sqlite3
-        enabled.pdo_sqlite
-      ]
-    ))
-
-    pkgs.php82Packages.composer
+let
+  php = pkgs.php82.buildEnv {
+    extensions = { enabled, all }: enabled ++ (with all; [
+      curl
+      fileinfo
+      mbstring
+      mysqli
+      openssl
+      pdo_mysql
+      pdo_pgsql
+      pdo_sqlite
+      pgsql
+      sodium
+      sqlite3
+      zip
+    ]);
+  };
+in {
+  home.packages = [
+    php
+    php.packages.composer
   ];
 }

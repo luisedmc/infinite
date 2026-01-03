@@ -6,6 +6,7 @@
 }:
 {
   imports = [
+    ./development
     ./terminal
     ./softwares
   ];
@@ -52,15 +53,11 @@
     unzip
     zip
 
-    # development
-    go
-    php83
-    php83Packages.composer
-
     # gui
     dbeaver-bin
     discord
     gapless
+    insomnia
     mpv
     notesnook
     obs-studio
@@ -68,6 +65,7 @@
     qbittorrent
     spotify
 
+    gvfs
     xfce.tumbler
     xfce.thunar
     xfce.xfconf
