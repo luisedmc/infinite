@@ -58,6 +58,7 @@
     discord
     gapless
     insomnia
+    mission-center
     mpv
     notesnook
     obs-studio
@@ -68,7 +69,7 @@
     gvfs
     xfce.tumbler
     xfce.thunar
-    xfce.xfconf
+    xfconf
     xdg-utils
 
     # editors

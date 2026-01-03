@@ -1,6 +1,6 @@
 {
-  pkgs,
   inputs,
+  pkgs,
   ...
 }:
 {
@@ -10,19 +10,20 @@
 
       plugins = [
         "${pkgs.anyrun}/lib/libapplications.so"
-        "${pkgs.anyrun}/lib/libsymbols.so"
       ];
 
       x.fraction = 0.5;
-      y.fraction = 0.25;
+      y.fraction = 0.2;
 
-      width.fraction = 0.2;
+      width.absolute = 400;
+
+      layer = "overlay";
 
       hideIcons = false;
       hidePluginInfo = true;
       closeOnClick = false;
       showResultsImmediately = true;
-      maxEntries = 8;
+      maxEntries = 5;
     };
 
     extraConfigFiles = {
@@ -41,76 +42,56 @@
     };
 
     extraCss = ''
-      #window {
-        background-color: rgba(0, 0, 0, 0);
+      window {
+        background: transparent;
       }
 
-      box#main {
+      box.main {
+        padding: 5px;
+        margin: 10px;
+        border-radius: 10px;
+        border: 2px solid rgba(255, 255, 255, 0.15); /* neutral border */
+        background-color: @theme_bg_color;
+      }
+
+      text {
+        font-size: 18px;
+        min-height: 30px;
+        padding: 5px;
         border-radius: 8px;
-      	background-color:  rgba(8, 8, 8, 0.9);
-      }
-
-      entry#entry {
-        min-height: 40px;
-        border-radius: 20px;
-        background: transparent;
         box-shadow: none;
-        border: none;
-      	color: #FFFFFF;
+        border: none; /* removes blue focus/search border */
       }
 
-      list#main {
+      .matches {
         background-color: rgba(0, 0, 0, 0);
       }
 
-      #plugin {
+      list.plugin {
+        background-color: rgba(0, 0, 0, 0);
+      }
+
+      list.plugin row {
+        margin-bottom: 4px;
+        margin-left: 12px;
         background: transparent;
-        padding-bottom: 5px;
+        border-radius: 8px;
       }
 
-      #match {
-        padding: 2.5px;
-      	color: #FFFFFF;
+      list.plugin row:selected {
+        border-left: 2px solid rgba(255, 255, 255, 0.35); /* monochrome highlight */
+        margin-left: 4px;
+        padding-left: 6px;
+        background: @theme_bg_color;
+        border-radius: 8px;
       }
 
-      #match:selected {
-        background: transparent;
-        border-right: 4px solid #A58AF6;
-        border-left: 4px solid #A58AF6;
-        border-radius: 4px;
-        color: #A58AF6;
+      label.match.title {
+        font-size: 18px;
       }
 
-      #match:selected label#info {
-        color: #b0b0b0;
-        animation: fade 0.1s linear
-      }
-
-      @keyframes fade {
-        0% {
-          color: transparent;
-        }
-
-        100% {
-          color: #b0b0b0;
-        }
-      }
-
-      #match label#info {
-        color: transparent;
-      }
-
-      #match:hover {
-        background: transparent;
-      }
-
-      label#match-desc {
-        font-size: 10px;
-        color: #b0b0b0;
-      }
-
-      label#plugin {
-        font-size: 14px;
+      label.match.description {
+        font-size: 12px;
       }
     '';
   };

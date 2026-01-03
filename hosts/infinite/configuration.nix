@@ -99,6 +99,7 @@
     extraSpecialArgs = { inherit inputs; };
   };
 
+  programs.coolercontrol.enable = true;
   programs.steam.enable = true;
   programs.zsh.enable = true;
   programs.hyprland = {

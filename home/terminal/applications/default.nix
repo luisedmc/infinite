@@ -18,6 +18,7 @@
     feh
     ffmpegthumbnailer
     imagemagick
+    liquidctl
     lm_sensors
     macchina
     ncdu
