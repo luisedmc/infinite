@@ -25,6 +25,7 @@ in
       ];
       exec-once = [
         "waybar"
+        "hypridle"
         "hyprpaper"
         "dunst"
         "spotify"

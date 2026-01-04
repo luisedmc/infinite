@@ -1,8 +1,9 @@
 {
-	imports = [
-		./binds.nix
-		./hyprland.nix
-		./hyprpaper.nix
-		./windowrule.nix
-	];
+  imports = [
+    ./binds.nix
+    ./hypridle.nix
+    ./hyprland.nix
+    ./hyprpaper.nix
+    ./windowrule.nix
+  ];
 }

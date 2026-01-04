@@ -17,7 +17,8 @@ in
       "$MOD,W,exec,thunar"
       "$MOD,V,togglefloating"
       "$MOD,V,resizeactive,exact 1280 900"
-      "$MOD,D,exec,anyrun"
+      # "$MOD,D,exec,anyrun"
+      "$MOD,D,exec,wofi --show drun -a"
       "$MODSHIFT,J,togglesplit"
       "$MOD,P,exec,bash -c 'grim -g \"$(slurp -d)\" - | wl-copy'"
       "$MODSHIFT,P,exec,hyprshot -m output -m DP-1"
@@ -34,10 +35,10 @@ in
       "$MOD, mouse_up, workspace, e+1"
 
       # ",XF86AudioPlay, exec, playerctl, --player=spotify play-pause"
-      ",XF86AudioPlay, exec, playerctl play-pause"
       # ",XF86AudioNext, exec, playerctl, --player=spotify next"
-      ",XF86AudioNext, exec, playerctl next"
       # ",XF86AudioPrev, exec, playerctl --player=spotify previous"
+      ",XF86AudioPlay, exec, playerctl play-pause"
+      ",XF86AudioNext, exec, playerctl next"
       ",XF86AudioPrev, exec, playerctl previous"
 
       "${builtins.concatStringsSep "\n" (
