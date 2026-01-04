@@ -17,7 +17,6 @@ in
       "$MOD,W,exec,thunar"
       "$MOD,V,togglefloating"
       "$MOD,V,resizeactive,exact 1280 900"
-      # "$MOD,D,exec,anyrun"
       "$MOD,D,exec,wofi --show drun -a"
       "$MODSHIFT,J,togglesplit"
       "$MOD,P,exec,bash -c 'grim -g \"$(slurp -d)\" - | wl-copy'"

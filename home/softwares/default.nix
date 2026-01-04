@@ -1,10 +1,10 @@
 { ... }:
 {
   imports = [
-    ./anyrun
     ./cava
     ./git
     ./hyprland
     ./waybar
+    ./wofi.nix
   ];
 }

@@ -67,6 +67,8 @@
     keyMap = "us";
   };
 
+  services.openssh.enable = true;
+  services.upower.enable = true;
   services.pipewire = {
     enable = true;
     alsa.enable = true;
@@ -104,7 +106,7 @@
   programs.zsh.enable = true;
   programs.hyprland = {
     enable = true;
-    package = inputs.hyprland.packages.${pkgs.system}.hyprland;
+    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
     # portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
     xwayland.enable = true;
   };
@@ -115,8 +117,8 @@
     neovim
     ntfs3g
 
-    inputs.rose-pine-hyprcursor.packages.${system}.default
-    inputs.zen-browser.packages.${system}.default
+    inputs.rose-pine-hyprcursor.packages.${stdenv.hostPlatform.system}.default
+    inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
   ];
 
   fonts.packages =
@@ -133,8 +135,6 @@
       iosevka
       jetbrains-mono
     ]);
-
-  services.openssh.enable = true;
 
   nix = {
     settings = {

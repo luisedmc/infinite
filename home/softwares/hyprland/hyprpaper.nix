@@ -6,11 +6,10 @@
     settings = {
       splash = false;
       preload = [
-        "/home/marin/Pictures/nixos.png"
+        "/home/marin/Pictures/nix-binary.png"
       ];
       wallpaper = [
-        # "DP-1,~/Pictures/wallpapers/nixos-white.png"
-        "DP-1, contain:/home/marin/Pictures/nixos.png"
+        "DP-1, /home/marin/Pictures/nix-binary.png"
       ];
     };
   };

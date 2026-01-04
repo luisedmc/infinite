@@ -1,4 +1,3 @@
-# overlays/default.nix
 [
   (final: prev: {
     sf-mono-liga-bin = prev.stdenvNoCC.mkDerivation rec {

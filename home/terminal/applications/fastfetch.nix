@@ -9,7 +9,7 @@
         padding = {
           right = 6;
         };
-        source = "~/Pictures/nix/nixos-icon.png";
+        source = "~/Pictures/nixos-logo.png";
         width = 32;
         height = 13;
       };

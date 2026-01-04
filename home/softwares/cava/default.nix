@@ -1,22 +1,25 @@
 {
   home.file.".config/cava/config".text = ''
-        [general]
-        bar_width = 1
-        bar_spacing = 0
-        [color]
-        ;background = default
-        ;foreground = default
-        ;background = '#111111'
-        ; foreground = '#33cccc'
-        gradient = 1
-    		gradient_count = 8
-    		gradient_color_1 = '#030508'
-    		gradient_color_2 = '#2A3859'
-    		gradient_color_3 = '#324166'
-    		gradient_color_4 = '#11606B'
-    		gradient_color_5 = '#BCADBB'
-    		gradient_color_6 = '#2B7F48'
-    		gradient_color_7 = '#16808F'
-    		gradient_color_8 = '#BCADBB'
+    [general]
+    bar_width = 1
+    bar_spacing = 0
+
+    [color]
+    gradient = 1
+    gradient_count = 8
+
+    # Background / base
+    background = '#070707'
+    foreground = '#FFFFFF'
+
+    # Monochromatic gradient (dark → light)
+    gradient_color_1 = '#0A0A0A'
+    gradient_color_2 = '#1A1A1A'
+    gradient_color_3 = '#2A2A2A'
+    gradient_color_4 = '#3A3A3A'
+    gradient_color_5 = '#5A5A5A'
+    gradient_color_6 = '#7A7A7A'
+    gradient_color_7 = '#B0B0B0'
+    gradient_color_8 = '#FFFFFF'
   '';
 }

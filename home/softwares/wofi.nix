@@ -8,6 +8,7 @@
       hide_scroll = true;
       location = 0;
       allow_images = true;
+      width = 600;
     };
     style = ''
       * {
@@ -17,8 +18,8 @@
       window {
         background: rgba(0, 0, 0, 0.8);
         margin: 1px;
-        border: 2px solid #0c0e0f;
-        border-radius: 15px 15px 15px 15px;
+        border: 2px solid #070707;
+        border-radius: 10px 10px 10px 10px;
       }
 
       #input {
@@ -37,12 +38,12 @@
         margin: 2px;
         padding: 20px;
         background-color: rgba(16, 18, 19, 0);
-        border-radius: 15px 15px 15px 15px;
+        border-radius: 10px 10px 10px 10px;
       }
 
       #text {
         margin: 2px;
-        color: #cdd6f4;
+        color: #6c7086;
       }
 
       #entry {
@@ -52,11 +53,16 @@
       #entry:selected {
         outline: none;
         background-color: rgba(16, 18, 19, 0);
+        border: none;
+      }
+
+      #text {
+        color: #6c7086;
       }
 
       #text:selected {
         background: none;
-        color: #ff7eb6;
+        color: #ffffff;
       }
 
       #img:selected {

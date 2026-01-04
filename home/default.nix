@@ -53,6 +53,9 @@
     unzip
     zip
 
+    # development
+    go
+
     # gui
     dbeaver-bin
     discord
@@ -79,12 +82,14 @@
 
     # wayland
     grim
+    hypridle
     hyprpicker
     hyprpaper
     hyprshade
     hyprshot
     slurp
     waybar
+    waypaper
     wl-clipboard
     wofi
   ];
