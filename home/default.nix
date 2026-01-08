@@ -47,6 +47,7 @@
   home.packages = with pkgs; [
     cava
     gcc
+    headsetcontrol
     killall
     material-symbols
     playerctl
@@ -55,6 +56,7 @@
 
     # development
     go
+    laravel
 
     # gui
     dbeaver-bin

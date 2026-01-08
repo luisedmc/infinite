@@ -16,6 +16,7 @@
       clang-tools
       fzf
       gopls
+      intelephense
       lua-language-server
       nixfmt-rfc-style
       nodejs

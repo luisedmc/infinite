@@ -24,6 +24,6 @@ in
 {
   home.packages = [
     php
-    php.packages.composer
+    pkgs.php82Packages.composer
   ];
 }
