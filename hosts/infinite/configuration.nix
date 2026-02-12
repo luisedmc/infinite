@@ -12,18 +12,17 @@
     inputs.home-manager.nixosModules.home-manager
   ];
 
-  boot = {
-    kernelPackages = pkgs.linuxPackages_latest;
+boot = {
+  kernelPackages = pkgs.linuxPackages_latest;
 
-    loader = {
-      efi.canTouchEfiVariables = true;
-      grub = {
-        enable = true;
-        devices = [ "nodev" ];
-        efiSupport = true;
-        useOSProber = true;
-      };
+  loader = {
+    efi.canTouchEfiVariables = true;
+    systemd-boot = {
+      enable = true;
+      consoleMode = "max";
+      editor = false;
     };
+  };
 
     initrd.kernelModules = [
       "nvidia"
