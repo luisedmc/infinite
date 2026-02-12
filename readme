@@ -74,21 +74,13 @@ nix.settings.experimental-features = [ "nix-command" "flakes" ];
 
 #### Install NixOS
 
-nixos-install
+git clone https://github.com/luisedmc/infinite
+
+nixos-install --flake ~/infinite#infinite
 
 nixos-enter --root /mnt -c 'passwd marin'
 
 reboot your system after
-
-### Applying flake configuration
-
-git clone https://github.com/luisedmc/infinite
-
-cd infinite
-
-sudo nixos-rebuild switch --flake .#infinite
-
-reboot
 
 ### Configuration
 
