@@ -26,7 +26,8 @@ in
       exec-once = [
         "waybar"
         "hypridle"
-        "hyprpaper"
+        "swww-daemon"
+        "sleep 1 && swww img /home/marin/Pictures/nixos-binary.png --transition-type fade --transition-duration 3"
         "dunst"
         "spotify"
         "hyprshade on vibrance"

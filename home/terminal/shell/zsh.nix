@@ -12,6 +12,11 @@
       clean = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       ".." = "cd ..";
 
+      # nodejs
+      usenode25 = "nix develop /home/marin/infinite#node-25";
+      usenode22 = "nix develop /home/marin/infinite#node-22";
+      usenode20 = "nix develop /home/marin/infinite#node-20";
+
       ls = "eza --icons --group-directories-first";
       ll = "eza --icons -lh --group-directories-first --no-user --long";
       la = "eza --icons -lah --group-directories-first";

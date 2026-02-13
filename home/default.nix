@@ -52,6 +52,7 @@
     material-symbols
     playerctl
     unzip
+    usbutils
     zip
 
     # development
@@ -67,13 +68,13 @@
     mpv
     notesnook
     obs-studio
-    pwvucontrol
+    pavucontrol
     qbittorrent
     spotify
 
     gvfs
-    xfce.tumbler
-    xfce.thunar
+    tumbler
+    thunar
     xfconf
     xdg-utils
 
@@ -86,7 +87,6 @@
     grim
     hypridle
     hyprpicker
-    hyprpaper
     hyprshade
     hyprshot
     slurp

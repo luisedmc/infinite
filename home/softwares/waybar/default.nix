@@ -111,7 +111,7 @@
 
         pulseaudio = {
           format = "{icon} {volume}%";
-          format-muted = "";
+          format-muted = "";
           format-icons = {
             default = [
               ""
@@ -120,7 +120,7 @@
             ];
           };
           on-click = "pamixer --toggle-mute";
-          on-click-right = "pwvucontrol";
+          on-click-right = "pavucontrol";
           on-scroll-up = "pamixer -i 5";
           on-scroll-down = "pamixer -d 5";
           scroll-step = 5;

@@ -13,7 +13,7 @@
   ];
 
 boot = {
-  kernelPackages = pkgs.linuxPackages_latest;
+  kernelPackages = pkgs.linuxPackages_6_18;
 
   loader = {
     efi.canTouchEfiVariables = true;
@@ -66,15 +66,22 @@ boot = {
     keyMap = "us";
   };
 
-  services.openssh.enable = true;
-  services.upower.enable = true;
-  services.pipewire = {
-    enable = true;
-    alsa.enable = true;
-    alsa.support32Bit = true;
-    jack.enable = true;
-    pulse.enable = true;
+  services = {
+    openssh.enable = true;
+    upower.enable = true;
+    
+    pulseaudio.enable = false;
+    pipewire = {
+      enable = true;
+      alsa.enable = true;
+      alsa.support32Bit = true;
+      jack.enable = true;
+      pulse.enable = true;
+      wireplumber.enable = true;
+    };
   };
+
+  security.rtkit.enable = true;
 
   users = {
     users.marin = {
@@ -98,16 +105,18 @@ boot = {
     useUserPackages = true;
     users.marin = import ../../home/default.nix;
     extraSpecialArgs = { inherit inputs; };
+    backupFileExtension = "backup";
   };
 
-  programs.coolercontrol.enable = true;
-  programs.steam.enable = true;
-  programs.zsh.enable = true;
-  programs.hyprland = {
-    enable = true;
-    package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-    # portalPackage = inputs.hyprland.packages.${pkgs.system}.xdg-desktop-portal-hyprland;
-    xwayland.enable = true;
+  programs = {
+    coolercontrol.enable = true;
+    steam.enable = true;
+    zsh.enable = true;
+    hyprland = {
+      enable = true;
+      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
+      xwayland.enable = true;
+    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -124,9 +133,6 @@ boot = {
     with pkgs;
     [
       font-awesome
-
-      # nerd-fonts.iosevka
-
       noto-fonts
       noto-fonts-color-emoji
     ]

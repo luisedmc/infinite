@@ -24,6 +24,12 @@
       options = [ "fmask=0022" "dmask=0022" ];
     };
 
+  fileSystems."/home/marin/windows" =
+    { device = "/dev/disk/by-uuid/CCF8CB78F8CB5EF8";
+      fsType = "ntfs-3g";
+      options = [ "rw"  "uid=1000" "nofail" ];
+    };
+
   swapDevices =
     [ { device = "/dev/disk/by-uuid/76a3f9f3-fb8c-4ca6-9d61-e4c4905e026f"; }
     ];

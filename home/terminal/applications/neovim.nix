@@ -18,7 +18,7 @@
       gopls
       intelephense
       lua-language-server
-      nixfmt-rfc-style
+      nixfmt
       nodejs
       pyright
       stylua

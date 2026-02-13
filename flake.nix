@@ -49,5 +49,7 @@
           extraSpecialArgs = { inherit inputs system; };
         };
       };
+
+      devShells.${system} = import ./shells/nodejs.nix { inherit pkgs; };
     };
 }

@@ -22,6 +22,7 @@ in
       "$MOD,P,exec,bash -c 'grim -g \"$(slurp -d)\" - | wl-copy'"
       "$MODSHIFT,P,exec,hyprshot -m output -m DP-1"
       "$MOD,N,exec,hyprpicker -a"
+      "$MOD,E,exec,waypaper"
       "$MOD,F,fullscreen"
       "$MODSHIFT,B,exec,bash -c ~/.local/bin/restart-waybar.sh"
 
