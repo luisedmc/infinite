@@ -8,21 +8,19 @@
 {
   imports = [
     ./hardware-configuration.nix
-
-    inputs.home-manager.nixosModules.home-manager
   ];
 
-boot = {
-  kernelPackages = pkgs.linuxPackages_6_18;
+  boot = {
+    kernelPackages = pkgs.linuxPackages_6_18;
 
-  loader = {
-    efi.canTouchEfiVariables = true;
-    systemd-boot = {
-      enable = true;
-      consoleMode = "max";
-      editor = false;
+    loader = {
+      efi.canTouchEfiVariables = true;
+      systemd-boot = {
+        enable = true;
+        consoleMode = "max";
+        editor = false;
+      };
     };
-  };
 
     initrd.kernelModules = [
       "nvidia"
@@ -69,7 +67,7 @@ boot = {
   services = {
     openssh.enable = true;
     upower.enable = true;
-    
+
     pulseaudio.enable = false;
     pipewire = {
       enable = true;
@@ -100,23 +98,10 @@ boot = {
     defaultUserShell = pkgs.zsh;
   };
 
-  home-manager = {
-    useGlobalPkgs = true;
-    useUserPackages = true;
-    users.marin = import ../../home/default.nix;
-    extraSpecialArgs = { inherit inputs; };
-    backupFileExtension = "backup";
-  };
-
   programs = {
     coolercontrol.enable = true;
     steam.enable = true;
     zsh.enable = true;
-    hyprland = {
-      enable = true;
-      package = inputs.hyprland.packages.${pkgs.stdenv.hostPlatform.system}.hyprland;
-      xwayland.enable = true;
-    };
   };
 
   environment.systemPackages = with pkgs; [
@@ -125,7 +110,6 @@ boot = {
     neovim
     ntfs3g
 
-    inputs.rose-pine-hyprcursor.packages.${stdenv.hostPlatform.system}.default
     inputs.zen-browser.packages.${stdenv.hostPlatform.system}.default
   ];
 
@@ -152,10 +136,6 @@ boot = {
         "@wheel"
       ];
       auto-optimise-store = true;
-
-      substituters = [ "https://hyprland.cachix.org" ];
-      trusted-substituters = [ "https://hyprland.cachix.org" ];
-      trusted-public-keys = [ "hyprland.cachix.org-1:a7pgxzMz7+chwVL3/pzj6jIBMioiJM7ypFP8PwtkuGc=" ];
     };
     gc = {
       automatic = true;

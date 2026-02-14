@@ -15,6 +15,16 @@
       url = "github:youwen5/zen-browser-flake";
       inputs.nixpkgs.follows = "nixpkgs";
     };
+
+    ags = {
+      url = "github:aylur/ags";
+      inputs.nixpkgs.follows = "nixpkgs";
+    };
+
+    ags-config = {
+      url = "path:/home/marin/ags";
+      flake = false;
+    };
   };
 
   outputs =
@@ -24,7 +34,6 @@
       ...
     }@inputs:
     let
-      lib = nixpkgs.lib;
       system = "x86_64-linux";
       pkgs = import nixpkgs {
         inherit system;
@@ -37,16 +46,24 @@
           inherit system;
           specialArgs = { inherit inputs; };
           modules = [
-            ./hosts/infinite/configuration.nix
+            ./hosts/infinite
           ];
         };
-      };
 
-      homeConfigurations = {
-        marin = home-manager.lib.homeManagerConfiguration {
-          inherit pkgs;
-          modules = [ ./home/default.nix ];
-          extraSpecialArgs = { inherit inputs system; };
+        celeste = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/celeste
+          ];
+        };
+
+        plasma = nixpkgs.lib.nixosSystem {
+          inherit system;
+          specialArgs = { inherit inputs; };
+          modules = [
+            ./hosts/plasma
+          ];
         };
       };
 

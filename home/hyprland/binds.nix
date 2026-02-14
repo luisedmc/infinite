@@ -2,10 +2,8 @@
   ...
 }:
 let
-  inherit (import ../../../hosts/infinite/variables.nix)
-    browser
-    terminal
-    ;
+  browser = "zen";
+  terminal = "kitty";
 in
 {
   wayland.windowManager.hyprland.settings = {
@@ -52,9 +50,9 @@ in
               builtins.toString (x + 1 - (c * 10));
           in
           ''
-            				bind = $MOD, ${ws}, workspace, ${toString (x + 1)}
-            				bind = $MODSHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}
-            		''
+            bind = $MOD, ${ws}, workspace, ${toString (x + 1)}
+            bind = $MODSHIFT, ${ws}, movetoworkspacesilent, ${toString (x + 1)}
+          ''
         ) 10
       )}"
 
@@ -63,9 +61,9 @@ in
           (
             { key, dir }:
             ''
-              				bind = $MOD, ${key}, movefocus, ${dir}
-              				bind = $MODSHIFT, ${key}, movewindow, ${dir} 
-              				''
+              bind = $MOD, ${key}, movefocus, ${dir}
+              bind = $MODSHIFT, ${key}, movewindow, ${dir} 
+            ''
           )
           [
             {

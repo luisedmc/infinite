@@ -1,13 +1,11 @@
 { pkgs, ... }:
 
 {
-  # Enable swww daemon via home-manager
   services.swww = {
     enable = true;
     package = pkgs.swww;
   };
 
-  # Configure waypaper to use swww backend
   xdg.configFile."waypaper/config.ini".text = ''
     [Settings]
     language = en

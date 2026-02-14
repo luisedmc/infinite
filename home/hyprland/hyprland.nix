@@ -3,9 +3,7 @@
   ...
 }:
 let
-  inherit (import ../../../hosts/infinite/variables.nix)
-    keyboardLayout
-    ;
+  keyboardLayout = "us";
 in
 {
   wayland.windowManager.hyprland = {
@@ -24,7 +22,7 @@ in
         "HYPRCURSOR_SIZE,24"
       ];
       exec-once = [
-        "waybar"
+        "systemctl --user restart ags.service"
         "hypridle"
         "swww-daemon"
         "sleep 1 && swww img /home/marin/Pictures/nixos-binary.png --transition-type fade --transition-duration 3"
@@ -142,6 +140,10 @@ in
         no_hardware_cursors = true;
         enable_hyprcursor = true;
       };
+
+      layerrule = [
+        "animation slide right, match:namespace notifications"
+      ];
 
       ecosystem = {
         no_update_news = true;

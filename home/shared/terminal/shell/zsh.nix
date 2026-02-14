@@ -6,9 +6,10 @@
     enableCompletion = true;
 
     shellAliases = {
-      hypr = "Hyprland";
-      rebuild = "sudo nixos-rebuild switch --flake ~/infinite#infinite";
-      hmu = "nix run .#homeConfigurations.marin.activationPackage";
+      hypr = "start-hyprland";
+      rebuild = "sudo nixos-rebuild switch --flake ~/infinite#infinite --override-input ags-config path:/home/marin/ags";
+      rebuild-celeste = "sudo nixos-rebuild switch --flake ~/infinite#celeste --override-input ags-config path:/home/marin/ags";
+      rebuild-plasma = "sudo nixos-rebuild switch --flake ~/infinite#plasma --override-input ags-config path:/home/marin/ags";
       clean = "nix-collect-garbage --delete-old && sudo nix-collect-garbage -d && sudo /run/current-system/bin/switch-to-configuration boot";
       ".." = "cd ..";
 

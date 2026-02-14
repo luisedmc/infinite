@@ -1,7 +1,6 @@
 {
   inputs,
   pkgs,
-  system,
   ...
 }:
 {
@@ -43,6 +42,7 @@
 
   # Let home Manager install and manage itself.
   programs.home-manager.enable = true;
+  systemd.user.startServices = "sd-switch";
 
   home.packages = with pkgs; [
     cava
@@ -60,6 +60,7 @@
     laravel
 
     # gui
+    bitwarden-desktop
     dbeaver-bin
     discord
     gapless
@@ -82,17 +83,5 @@
     mars-mips
     lite-xl
     vscode
-
-    # wayland
-    grim
-    hypridle
-    hyprpicker
-    hyprshade
-    hyprshot
-    slurp
-    waybar
-    waypaper
-    wl-clipboard
-    wofi
   ];
 }
