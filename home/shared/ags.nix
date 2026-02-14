@@ -5,6 +5,7 @@ let
   astalPackages = with inputs.ags.packages.${system}; [
     io
     astal4
+    apps
     hyprland
     mpris
     network
