@@ -68,6 +68,8 @@
     openssh.enable = true;
     upower.enable = true;
 
+    gvfs.enable = true;
+
     pulseaudio.enable = false;
     pipewire = {
       enable = true;
