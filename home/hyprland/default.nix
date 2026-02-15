@@ -4,6 +4,7 @@
     ../shared
     ../shared/ags.nix
     ./hyprland.nix
+    ./waybar/default.nix
     ./binds.nix
     ./hypridle.nix
     ./swww.nix
