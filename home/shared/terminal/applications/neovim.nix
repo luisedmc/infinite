@@ -14,6 +14,7 @@
     extraPackages = with pkgs; [
       cargo
       clang-tools
+      eslint
       fzf
       gopls
       intelephense
@@ -22,7 +23,10 @@
       nodejs
       pyright
       stylua
+      typescript-language-server
       ripgrep
+      rust-analyzer
+      vscode-langservers-extracted
       wget
     ];
   };

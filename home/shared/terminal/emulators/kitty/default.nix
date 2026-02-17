@@ -7,7 +7,7 @@
       italic_font = "auto";
       bold_italic_font = "auto";
       background_opacity = 0.91;
-      font_size = 13;
+      font_size = 12;
       disable_ligatures = "never";
       window_padding_width = 25;
       confirm_os_window_close = 0;

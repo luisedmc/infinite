@@ -59,11 +59,16 @@
     # development
     go
     laravel
+    lua
+    python3
+    rustc
+    typescript
 
     # gui
     bitwarden-desktop
     dbeaver-bin
     discord
+    foliate
     gapless
     insomnia
     mission-center
@@ -82,6 +87,6 @@
     # editors
     mars-mips
     lite-xl
-    vscode
+    zed-editor
   ];
 }

@@ -22,6 +22,10 @@ let
   };
 in
 {
+  imports = [
+    ./vscode.nix
+  ];
+
   home.packages = [
     php
     pkgs.php82Packages.composer
