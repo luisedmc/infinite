@@ -46,6 +46,7 @@
 
   home.packages = with pkgs; [
     cava
+    fzf
     gcc
     headsetcontrol
     killall
@@ -73,7 +74,6 @@
     qbittorrent
     spotify
 
-    gvfs
     tumbler
     thunar
     xfconf

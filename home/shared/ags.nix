@@ -51,7 +51,8 @@ in
     Unit = {
       Description = "AGS shell";
       PartOf = [ "graphical-session.target" ];
-      After = [ "graphical-session.target" ];
+      Wants = [ "pipewire.service" "pipewire-pulse.service" "wireplumber.service" ];
+      After = [ "graphical-session.target" "pipewire.service" "pipewire-pulse.service" "wireplumber.service" ];
       ConditionEnvironment = "WAYLAND_DISPLAY";
       X-Restart-Triggers = [ "${my-shell}/bin/my-shell" ];
     };

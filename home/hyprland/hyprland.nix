@@ -22,7 +22,6 @@ in
         "HYPRCURSOR_SIZE,24"
       ];
       exec-once = [
-        "systemctl --user restart ags.service"
         "hypridle"
         "swww-daemon"
         "sleep 1 && swww img /home/marin/Pictures/nixos-binary.png --transition-type fade --transition-duration 3"
