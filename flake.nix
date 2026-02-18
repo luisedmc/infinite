@@ -64,14 +64,6 @@
             ./hosts/celeste
           ];
         };
-
-        plasma = nixpkgs.lib.nixosSystem {
-          inherit system;
-          specialArgs = { inherit inputs; };
-          modules = [
-            ./hosts/plasma
-          ];
-        };
       };
 
       devShells.${system} = import ./shells/nodejs.nix { inherit pkgs; };
