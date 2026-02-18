@@ -46,6 +46,13 @@
       package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
 
+    logitech = {
+      wireless = {
+        enable = true;
+        enableGraphical = true;
+      };
+    };
+
     graphics.enable = true;
   };
 

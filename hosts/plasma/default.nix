@@ -17,5 +17,6 @@
     users.marin = import ../../home/plasma;
     extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
+    overwriteBackup = true;
   };
 }

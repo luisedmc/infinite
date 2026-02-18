@@ -13,5 +13,6 @@
     users.marin = import ../../home/celeste;
     extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
+    overwriteBackup = true;
   };
 }

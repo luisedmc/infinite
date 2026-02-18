@@ -28,5 +28,6 @@
     users.marin = import ../../home/hyprland;
     extraSpecialArgs = { inherit inputs; };
     backupFileExtension = "backup";
+    overwriteBackup = true;
   };
 }
