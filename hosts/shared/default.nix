@@ -46,24 +46,15 @@
       package = config.boot.kernelPackages.nvidiaPackages.beta;
     };
 
-    logitech = {
-      wireless = {
-        enable = true;
-        enableGraphical = true;
-      };
-    };
-
     graphics.enable = true;
   };
 
   networking = {
     hostName = "nixos";
-    networkmanager = {
-      enable = true;
-    };
+    networkmanager.enable = true;
   };
 
-  time.timeZone = "Brazil/East";
+  time.timeZone = "America/Sao_Paulo";
 
   i18n.defaultLocale = "en_US.UTF-8";
   console = {
@@ -87,6 +78,43 @@
       wireplumber.enable = true;
     };
   };
+
+  services.postgresql = {
+    enable = true;
+    package = pkgs.postgresql_18;
+
+    ensureDatabases = [ "marin" ];
+
+    settings = {
+      timezone = "America/Sao_Paulo";
+    };
+
+    ensureUsers = [
+      {
+        name = "marin";
+        ensureDBOwnership = true;
+        ensureClauses.superuser = true;
+      }
+    ];
+  };
+
+  services.geoclue2 = {
+    enable = true;
+    appConfig = {
+      "chromium-browser" = {
+        isAllowed = true;
+        isSystem = false;
+      };
+      "zen" = {
+        isAllowed = true;
+        isSystem = false;
+      };
+    };
+  };
+
+  xdg.portal.enable = true;
+
+  location.provider = "geoclue2";
 
   security.rtkit.enable = true;
 

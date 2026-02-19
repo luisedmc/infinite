@@ -78,6 +78,7 @@
     pavucontrol
     qbittorrent
     spotify
+		ungoogled-chromium
 
     tumbler
     thunar
