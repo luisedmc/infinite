@@ -46,6 +46,7 @@
 
   home.packages = with pkgs; [
     cava
+    fd
     fzf
     gcc
     headsetcontrol
@@ -86,8 +87,8 @@
     xdg-utils
 
     # editors
-    mars-mips
+    emacs
     lite-xl
-    zed-editor
+    mars-mips
   ];
 }
