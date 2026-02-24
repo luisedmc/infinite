@@ -19,10 +19,12 @@
   gtk = {
     enable = true;
     theme = {
-      name = "Fluent-Dark";
-      package = pkgs.fluent-gtk-theme.override {
-        tweaks = [ "blur" ];
-      };
+      # name = "Fluent-Dark";
+      # package = pkgs.fluent-gtk-theme.override {
+      #   tweaks = [ "blur" ];
+      # };
+      name = "Colloid-Dark";
+      package = pkgs.colloid-gtk-theme;
     };
     iconTheme = {
       name = "WhiteSur";

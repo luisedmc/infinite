@@ -39,6 +39,8 @@ let
       mkdir -p $out/share
       cp -r * $out/share
       ags bundle app.ts $out/bin/my-shell -d "SRC='$out/share'"
+      # ags-config is a local path input and can carry non-reproducible symlinks.
+      rm -rf $out/share/node_modules
 
       runHook postInstall
     '';

@@ -10,7 +10,7 @@ in
     enable = true;
     package = pkgs.hyprland;
     settings = {
-      "$MOD" = "ALT";
+      "$MOD" = "SUPER";
       env = [
         "LIBVA DRIVER NAME,nvidia"
         "XDG_SESSION_TYPE,wayland"
