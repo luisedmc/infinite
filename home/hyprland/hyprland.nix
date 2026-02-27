@@ -133,6 +133,7 @@ in
         kb_layout = "${keyboardLayout}";
         follow_mouse = 1;
         sensitivity = -0.6;
+        natural_scroll = true;
       };
 
       cursor = {

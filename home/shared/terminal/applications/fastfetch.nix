@@ -6,12 +6,12 @@
         separator = " ";
       };
       logo = {
-        padding = {
-          right = 6;
-        };
-        source = "~/Pictures/nixos-logo.png";
-        width = 32;
-        height = 13;
+        # padding = {
+        #   right = 6;
+        # };
+        # source = "~/Pictures/nixos-logo.png";
+        width = 16;
+        height = 16;
       };
       modules = [
         "break"
