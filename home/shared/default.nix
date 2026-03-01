@@ -63,6 +63,7 @@
     go
     laravel
     lua
+    man-pages
     python3
     rustc
     typescript
@@ -81,7 +82,7 @@
     pavucontrol
     qbittorrent
     spotify
-		ungoogled-chromium
+    ungoogled-chromium
 
     tumbler
     thunar
@@ -89,7 +90,6 @@
     xdg-utils
 
     # editors
-    emacs
     lite-xl
     mars-mips
   ];
