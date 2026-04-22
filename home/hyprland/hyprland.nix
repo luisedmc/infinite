@@ -10,7 +10,7 @@ in
     enable = true;
     package = pkgs.hyprland;
     settings = {
-      "$MOD" = "SUPER";
+      "$MOD" = "ALT";
       env = [
         "LIBVA DRIVER NAME,nvidia"
         "XDG_SESSION_TYPE,wayland"
@@ -23,8 +23,8 @@ in
       ];
       exec-once = [
         "hypridle"
-        "swww-daemon"
-        "sleep 1 && swww img /home/marin/Pictures/nixos-binary.png --transition-type fade --transition-duration 3"
+        "awww-daemon"
+        "sleep 1 && awww img /home/marin/Pictures/nixos-binary.png --transition-type fade --transition-duration 3"
         "dunst"
         "spotify"
         "hyprshade on vibrance"

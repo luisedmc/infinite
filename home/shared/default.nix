@@ -65,11 +65,13 @@
     lua
     man-pages
     python3
+    opencode
     rustc
     typescript
 
     # gui
-    bitwarden-desktop
+    arduino-ide
+    _1password-gui
     dbeaver-bin
     discord
     foliate
@@ -83,6 +85,8 @@
     qbittorrent
     spotify
     ungoogled-chromium
+    wireguard-ui
+    wireguard-tools
 
     tumbler
     thunar

@@ -4,8 +4,8 @@
     windowrule = [
       "workspace 6 silent, match:class ^(org.qbittorrent.qBittorrent)$"
       "workspace 5 silent, match:class ^(discord)$"
-      "workspace 4 silent, match:class ^(IVPN)$"
-      "move 1590 439, match:class ^(IVPN)$"
+      # "workspace 4 silent, match:class ^(IVPN)$"
+      # "move 1590 439, match:class ^(IVPN)$"
       "workspace 4 silent, match:class ^(Spotify)$"
       "float on, match:class ^(Spotify)$"
       "opacity 0.0 override, match:class ^(xwaylandvideobridge)$"

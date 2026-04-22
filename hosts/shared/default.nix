@@ -129,6 +129,8 @@
         "networkmanager"
         "video"
         "wheel"
+        "dialout"
+        "uucp"
       ];
       packages = with pkgs; [ ];
     };

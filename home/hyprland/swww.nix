@@ -1,9 +1,9 @@
 { pkgs, ... }:
 
 {
-  services.swww = {
+  services.awww = {
     enable = true;
-    package = pkgs.swww;
+    package = pkgs.awww;
   };
 
   xdg.configFile."waypaper/config.ini".text = ''
@@ -11,15 +11,15 @@
     language = en
     folder = /home/marin/Pictures
     wallpaper = /home/marin/Pictures/nixos-binary.png
-    backend = swww
+    backend = awww
     monitors = All
     fill = fill
     sort = name
     color = #070707
     subfolders = False
     number_of_columns = 3
-    swww_transition_type = fade
-    swww_transition_step = 90
-    swww_transition_duration = 3
+    awww_transition_type = fade
+    awww_transition_step = 90
+    awww_transition_duration = 3
   '';
 }
